@@ -1,0 +1,44 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <mat-card-content>
+        <mat-form-field>
+          <input matInput placeholder="First Name" formControlName="firstName" required>
+          <mat-error>Firstname Required!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Last Name" formControlName="lastName" required>
+          <mat-error>Lastname Required!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email" required>
+          <mat-error>Email Required!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" formControlName="password" minlength="6" pattern="^((?!.*[\s]).{6,10})" required>
+          <mat-error *ngIf="registerForm.get('password').hasError('required')">Password Required!</mat-error>
+          <mat-error *ngIf="registerForm.get('password').hasError('pattern')">Password cannot contain white spaces and can be at least 6
+             characters in length, max 10!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Phone Number" formControlName="phoneNumber" required>
+          <mat-error>Phone Number Required!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Address" formControlName="address" required>
+          <mat-error>Address Required!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="date" placeholder="Birth Date" formControlName="birthDate" required>
+          <mat-error>Birth Date Required!</mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" [disabled]="!registerForm.valid">Register</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

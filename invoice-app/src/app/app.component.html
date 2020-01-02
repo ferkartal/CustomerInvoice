@@ -1,0 +1,14 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary">
+  <div><a target="_blank"></a></div>
+  <span>
+    <a mat-button mat-raised-button routerLink="login" routerLinkActive="active" *ngIf="!(isLoggedIn$ | async)">Log
+      in</a>
+    <a mat-button routerLink="register" routerLinkActive="active" *ngIf="!(isLoggedIn$ | async)">Register</a>
+    <a mat-button mat-raised-button routerLink="customer" routerLinkActive="active" *ngIf="isLoggedIn$ | async">Profile
+    </a>
+    <a mat-button (click)="onLogout()" *ngIf="isLoggedIn$ | async">Log out </a>
+  </span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

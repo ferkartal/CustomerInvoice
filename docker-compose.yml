@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  api-service:
+    build: invoice-api/.
+    ports: 
+      - '8080:8080'
+
+  angular-service:
+    build: invoice-app/.
+    ports:
+      - '4200:4200'
+    depends_on:
+      - api-service
+
