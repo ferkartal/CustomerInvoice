@@ -10,7 +10,7 @@ Creating new customers and adding new invoices to them to organize economic prog
 
 * [Spring Boot](http://projects.spring.io/spring-boot/) (Web, Data JDBC, Security)
 * [Maven](http://maven.apache.org/)
-* [H2 Database](https://www.h2database.com/) (Production, Development)
+* [H2 Database](https://www.h2database.com/)
 * [Docker](https://www.docker.com/)
 * [Docker Compose](https://docs.docker.com/compose/)
 * [AngularJS](https://angularjs.org/)
