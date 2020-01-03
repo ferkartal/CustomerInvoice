@@ -60,14 +60,21 @@ Before deploying the project, your computer should have below dependencies;
 mvn verify
 ```
 ###  Docker - build the images
+
+
+- Go to the "invoice-api" file
 ```
-docker build -t afs-app afs-app/.
-docker build -t afs-api afs-api/.
+docker build -t invoice-api .
+```
+- Go to the "invoice-app" file
+```
+docker build -t invoice-app .
 ```
 ### Docker - run the containers
 ```
-docker run -d --name afs-app -p 4200:4200
-docker run --name afs-api -p 8080:8080
+docker run -p 8080:8080 invoice-api 
+
+docker run -p 4200:4200 invoice-app 
 ```
 ### Just use docker-compose
 ```
